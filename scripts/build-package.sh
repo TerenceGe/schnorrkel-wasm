@@ -58,7 +58,7 @@ sed -i -e 's/let cachedTextEncoder = new /\/\/ let cachedTextEncoder = new /g' $
 sed -i -e 's/cachedTextEncoder\.encode/stringToU8a/g' $SRC_WASM
 
 # this creates issues in both the browser and RN (@polkadot/util has a polyfill)
-sed -i -e 's/const TextDecoder = require('\''util'\'')\.TextDecoder;/const { u8aToString } = require('\''@polkadot\/util'\'');/g' $SRC_WASM
+sed -i -e 's/const TextDecoder = require('\''util'\'')\.TextDecoder;/const { u8aToString } = require('\''.\/util'\'');/g' $SRC_WASM
 sed -i -e 's/let cachedTextDecoder = new /\/\/ let cachedTextDecoder = new /g' $SRC_WASM
 sed -i -e 's/cachedTextDecoder\.decode/u8aToString/g' $SRC_WASM
 

@@ -2,8 +2,6 @@
 // Copyright 2019-2020 @polkadot/wasm-crypto authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
-
-const pkg = require('./package.json');
 const asm = require('./wasm_asm_stub');
 const bytes = require('./wasm_wasm');
 const imports = require('./wasm');
@@ -15,11 +13,11 @@ module.exports = async function createExportPromise () {
     return instance.exports;
   } catch (error) {
     // if we have a valid supplied asm.js, return that
-    if (asm && asm.ext_blake2b) {
+    if (asm && asm.ext_sr_from_seed) {
       return asm;
     }
 
-    console.error(`ERROR: Unable to initialize ${pkg.name} ${pkg.version}`);
+    console.error(`ERROR: Unable to initialize schnorrkel wasm`);
     console.error(error);
 
     return null;

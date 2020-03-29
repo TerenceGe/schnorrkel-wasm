@@ -4,15 +4,15 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 const wasm = require('../../build/index');
-const bip39 = require('./bip39');
-const ed25519 = require('./ed25519');
-const hashing = require('./hashing');
+// const bip39 = require('./bip39');
+// const ed25519 = require('./ed25519');
+// const hashing = require('./hashing');
 const sr25519 = require('./sr25519');
 
 const tests = {
-  ...bip39,
-  ...ed25519,
-  ...hashing,
+  // ...bip39,
+  // ...ed25519,
+  // ...hashing,
   ...sr25519
 };
 
